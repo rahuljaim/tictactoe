@@ -1,0 +1,12 @@
+.box {
+    height: 100px;
+    width: 100px;
+    margin: 15px;
+    /* display: none; */
+}
+#toss_result{
+    margin-left: 25px;
+    font-size: medium;
+    font-weight: bold;
+    color: brown;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe Game</title>
+    <link rel="stylesheet" href="./style/tictacStyle.css">
+
+</head>
+
+<body>
+    <div class="tic">
+        <button onclick='toss(this)'>Toss</button>
+
+        <span id="toss_result"></span>
+
+
+        <br />
+        <button class="box box1 row1 col1 dia1" onclick="game_begin(this)">1</button>
+        <button class="box box2 row1 col2" onclick="game_begin(this)">2</button>
+        <button class="box box3 row1 col3 dia2" onclick="game_begin(this)">3</button><br />
+        <button class="box box4 row2 col1" onclick="game_begin(this)">4</button>
+        <button class="box box5 row2 col2 dia1 dia2" onclick="game_begin(this)">5</button>
+        <button class="box box6 row2 col3" onclick="game_begin(this)">6</button><br />
+        <button class="box box7 row3 col1 dia2" onclick="game_begin(this)">7</button>
+        <button class="box box8 row3 col2" onclick="game_begin(this)">8</button>
+        <button class="box box9 row3 col3 dia1" onclick="game_begin(this)">9</button><br />
+
+
+
+    </div>
+
+
+</body>
+<script src="./js/tictactoe.js"></script>
+
+</html>
