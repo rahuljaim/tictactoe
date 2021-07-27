@@ -1,5 +1,15 @@
 * {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0 auto;
+}
+.title{
+    background-color: #45a049;
+    margin-bottom: 30px;
+    text-align: center;
+    height: 100px;
+    text-align: center;
+    line-height: 3;
+    color:ghostwhite;
 }
 .box {
   height: 100px;
@@ -108,8 +118,11 @@ input[type="submit"], input[type="reset"]:hover {
 .score {
   margin-top: 100px;
   height: 100%;
-  background-color: rgb(55, 201, 238);
+  background-color: #45a049;
   display: grid;
   grid-template-columns: 50% 50%;
   padding: 30px;
+}
+.ele-foot{
+    grid-column: 1 / 3;
 }
