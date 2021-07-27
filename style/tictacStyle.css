@@ -2,11 +2,46 @@
     height: 100px;
     width: 100px;
     margin: 15px;
+    border-radius: 15%;
     /* display: none; */
+    border-color: black;
+    background-color: rgb(223, 213, 213);
+    text-shadow: none;
+    color: rgb(223, 213, 213);;
+    font-size: large;
+    font-weight: bold;
 }
 #toss_result{
     margin-left: 25px;
     font-size: medium;
     font-weight: bold;
     color: brown;
+}
+.tic{
+    text-align: center;
+}
+
+button.box.X {
+    height: 100px;
+    width: 100px;
+    margin: 15px;
+    border-radius: 15%;
+    border-color: rgb(71, 83, 255);
+    background-color: tomato;
+    text-shadow: 1px 1px black;
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+}
+button.box.O {
+    height: 100px;
+    width: 100px;
+    margin: 15px;
+    border-radius: 15%;
+    border-color: rgb(71, 83, 255);
+    background-color: dodgerblue;
+    text-shadow: 1px 1px black;
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
 }

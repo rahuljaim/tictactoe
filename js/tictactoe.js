@@ -1,22 +1,47 @@
+function $(id){
+    return document.getElementById(id);
+}
+function _$(selector){
+    return document.querySelector(selector);
+}
 let allbt= document.querySelectorAll(".box");
 var attempt; 
 let counter = 0;
+let p1 = $("p1");
+let p2 = $("p2");
+let toss1=$("toss1");
+let play=$("play");
+let p_profile= _$(".player_details")
+play.style.display='none';
+function enable1(){
+        if(p1.value && p2.value){
+            toss1.removeAttribute("disabled"); 
+        }
+        else{
+            toss1.setAttribute("disabled","true");
+        }      
+}
+
 function toss(btn) {
     let t1 = document.querySelector("#toss_result");
     let rand = Math.random() * 10;
     if (rand >= 5) {
-        t1.textContent="Player 1 Won";
+        t1.textContent=""+p1.value+" Won the Toss";
         console.log(rand);
         attempt = "X";
-        
+        play.style.display='block';
+        p_profile.style.display='none';
     }
     else {
-        t1.textContent="Player 2 Won";
+        t1.textContent="" + p2.value+ " Won the Toss";
         console.log(rand);
         attempt = "O";
+        play.style.display='block';
+        p_profile.style.display='none';
     }   
     btn.setAttribute("disabled","true");
 }
+
 
 let winnerCondition = [
     ["box1", "box2", "box3"],
@@ -42,12 +67,12 @@ let checkWinner = function()
         let o = Array.from(find).every(e=>e.classList.contains("O"));
         if(x)
         {
-            setTimeout(()=>{alert("Winner is X");}, 300)
+            setTimeout(()=>{alert("Congratulation "+p1.value+" ! is the Winner");}, 300)
             break;
         }
         if(o)
         {
-            setTimeout(()=>{alert("Winner is O");}, 300)
+            setTimeout(()=>{alert("Congratulation "+p2.value+" ! is the Winner");}, 300)
             break;
         }
     }
