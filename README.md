@@ -16,4 +16,4 @@
 
 ## Under Development- Future Approach
 
-    We will update more functionality including animation and draw option which is under development
+    We will update more functionality including animation and draw option which is under development, DRAW & Restart

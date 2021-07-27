@@ -1,47 +1,115 @@
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 .box {
-    height: 100px;
-    width: 100px;
-    margin: 15px;
-    border-radius: 15%;
-    /* display: none; */
-    border-color: black;
-    background-color: rgb(223, 213, 213);
-    text-shadow: none;
-    color: rgb(223, 213, 213);;
-    font-size: large;
-    font-weight: bold;
+  height: 100px;
+  width: 100px;
+  margin: 0px;
+  /* border-radius: 15%; */
+  /* border-radius: 10%; */
+  border-color: black;
+  background: none;
+  text-shadow: none;
+  color: rgb(255, 255, 255);
+  font-size: 42px;
+  font-weight: bold;
+  margin-top: 3px;
 }
-#toss_result{
-    margin-left: 25px;
-    font-size: medium;
-    font-weight: bold;
-    color: brown;
+#toss_result {
+  font-size: x-large;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #45a049;
+  margin-bottom: 20px;
 }
-.tic{
-    text-align: center;
+.tic {
+  text-align: center;
 }
 
 button.box.X {
-    height: 100px;
-    width: 100px;
-    margin: 15px;
-    border-radius: 15%;
-    border-color: rgb(71, 83, 255);
-    background-color: tomato;
-    text-shadow: 1px 1px black;
-    color: white;
-    font-size: x-large;
-    font-weight: bold;
+  color: tomato;
 }
 button.box.O {
-    height: 100px;
-    width: 100px;
-    margin: 15px;
-    border-radius: 15%;
-    border-color: rgb(71, 83, 255);
-    background-color: dodgerblue;
-    text-shadow: 1px 1px black;
-    color: white;
-    font-size: x-large;
-    font-weight: bold;
+  color: dodgerblue;
+}
+.player_details {
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+.box1 {
+  border-top: 0px;
+  border-left: 0px;
+}
+.box2 {
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+}
+.box3 {
+  border-top: 0px;
+  border-right: 0px;
+}
+.box4 {
+  border-top: 0px;
+  border-bottom: 0px;
+  border-left: 0px;
+}
+.box5 {
+  border: 0px;
+}
+.box6 {
+  border-top: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+}
+.box7 {
+  border-left: 0px;
+  border-bottom: 0px;
+}
+.box8 {
+  border-right: 0px;
+  border-bottom: 0px;
+  border-left: 0px;
+}
+.box9 {
+  border-right: 0px;
+  border-bottom: 0px;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="submit"], input[type="reset"] {
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"], input[type="reset"]:hover {
+  background-color: #45a049;
+}
+.ele1 {
+  visibility: hidden;
+}
+.score {
+  margin-top: 100px;
+  height: 100%;
+  background-color: rgb(55, 201, 238);
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 30px;
 }
