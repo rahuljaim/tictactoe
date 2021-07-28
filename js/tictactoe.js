@@ -7,6 +7,8 @@ function _$(selector) {
 let allbt = document.querySelectorAll(".box");
 var attempt;
 let counter = 0;
+let players = {
+}
 let p1 = $("p1");
 let p2 = $("p2");
 let toss1 = $("toss1");
@@ -16,12 +18,21 @@ play.style.display = "none";
 function enable1() {
   if (p1.value && p2.value) {
     toss1.removeAttribute("disabled");
+    players[p1.value] = 0;
+    players[p2.value] = 0;
   } else {
     toss1.setAttribute("disabled", "true");
   }
 }
 
 function toss(btn) {
+
+  let player1 = $("person1");
+  let player2 = $("person2");
+
+  player1.innerText = `${ p1.value } : ${players[p1.value]}`;
+  player2.innerText = `${ p2.value } : ${players[p2.value]}`;
+
   let t1 = document.querySelector("#toss_result");
   let rand = Math.random() * 10;
   if (rand >= 5) {
@@ -62,22 +73,55 @@ let checkWinner = function () {
     if (x) {
       setTimeout(() => {
         alert("Congratulation " + p1.value + " ! is the Winner");
+        players[p1.value] +=1;
+        $("person1").innerText = `${ p1.value } : ${players[p1.value]}`;
+
+        _$(".restart").style.display = "block";
       }, 300);
+      for(let box of allbt)
+        box.setAttribute("disabled","true");
       break;
     }
     if (o) {
       setTimeout(() => {
         alert("Congratulation " + p2.value + " ! is the Winner");
+        players[p2.value] +=1;
+        $("person2").innerText = `${ p2.value } : ${players[p2.value]}`;
+        _$(".restart").style.display = "block";
       }, 300);
+      for(let box of allbt)
+        box.setAttribute("disabled","true");
+      break;
     }
-    // if (x === false && o === false) {
-    //   setTimeout(() => {
-    //     alert("No one is the Winner");
-    //   }, 300);
-    //   break;
-    // }
+
+    if(checked.length == 9 && !x && !o)
+    {
+      setTimeout(() => {
+        alert("Game is Draw");
+        _$(".restart").style.display = "block";
+      }, 300);
+      break;
+    }
   }
 };
+
+function restartGame()
+{
+  checked.length = 0;
+  let box = document.querySelectorAll(".box");
+  
+  for(let i of box)
+  {
+    i.classList.remove("X");
+    i.classList.remove("O");
+    i.innerText = '1';
+    i.removeAttribute("disabled");
+    counter = 0;
+    _$(".restart").style.display = "none";
+  }
+  players[p1.value] = p1score;
+  players[p2.value] = p2score;
+}
 
 function game_begin(btn) {
   if (attempt) {
