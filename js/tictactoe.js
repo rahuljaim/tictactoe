@@ -65,25 +65,32 @@ let winnerCondition = [
 let checked = [];
 
 let checkWinner = function () {
+
+  var x;
+  var y;
+  let someOnewin;
+
   for (let winner of winnerCondition) {
     let classes = winner.map((e) => "." + e).join(","); //".box1, .box2, .box3" bhaiya aage dot lagana tha aur peeche comma
     let find = document.querySelectorAll(classes);
-    let x = Array.from(find).every((e) => e.classList.contains("X"));
-    let o = Array.from(find).every((e) => e.classList.contains("O"));
+    x = Array.from(find).every((e) => e.classList.contains("X"));
+    o = Array.from(find).every((e) => e.classList.contains("O"));
     if (x) {
       setTimeout(() => {
+        someOnewin = true;
         alert("Congratulation " + p1.value + " ! is the Winner");
         players[p1.value] +=1;
         $("person1").innerText = `${ p1.value } : ${players[p1.value]}`;
-
         _$(".restart").style.display = "block";
       }, 300);
       for(let box of allbt)
         box.setAttribute("disabled","true");
+        console.log("x win :)");
       break;
     }
     if (o) {
       setTimeout(() => {
+        someOnewin = true;
         alert("Congratulation " + p2.value + " ! is the Winner");
         players[p2.value] +=1;
         $("person2").innerText = `${ p2.value } : ${players[p2.value]}`;
@@ -91,18 +98,18 @@ let checkWinner = function () {
       }, 300);
       for(let box of allbt)
         box.setAttribute("disabled","true");
-      break;
-    }
-
-    if(checked.length == 9 && !x && !o)
-    {
-      setTimeout(() => {
-        alert("Game is Draw");
-        _$(".restart").style.display = "block";
-      }, 300);
+        console.log("o win :X");
       break;
     }
   }
+
+  if(checked.length == 9 && (!x && !o))
+  setTimeout(() => {
+    alert("Game is Draw");
+    _$(".restart").style.display = "block";
+    console.log("Draw ;(");
+  }, 300);
+
 };
 
 function restartGame()
@@ -119,8 +126,7 @@ function restartGame()
     counter = 0;
     _$(".restart").style.display = "none";
   }
-  players[p1.value] = p1score;
-  players[p2.value] = p2score;
+  
 }
 
 function game_begin(btn) {
